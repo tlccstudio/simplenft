@@ -1,0 +1,214 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "create",
+            "base": "",
+            "fields": [
+                {
+                    "name": "nft_id",
+                    "type": "name"
+                },
+                {
+                    "name": "creator",
+                    "type": "name"
+                },
+                {
+                    "name": "nft_name",
+                    "type": "string"
+                },
+                {
+                    "name": "media",
+                    "type": "string"
+                },
+                {
+                    "name": "mtype",
+                    "type": "string"
+                },
+                {
+                    "name": "limit",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "mint",
+            "base": "",
+            "fields": [
+                {
+                    "name": "nft_id",
+                    "type": "name"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "qty",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "nft_holders",
+            "base": "",
+            "fields": [
+                {
+                    "name": "nft_id",
+                    "type": "name"
+                },
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "qty",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "nft_listing",
+            "base": "",
+            "fields": [
+                {
+                    "name": "nft_id",
+                    "type": "name"
+                },
+                {
+                    "name": "creator",
+                    "type": "name"
+                },
+                {
+                    "name": "created",
+                    "type": "uint32"
+                },
+                {
+                    "name": "nft_name",
+                    "type": "string"
+                },
+                {
+                    "name": "media",
+                    "type": "string"
+                },
+                {
+                    "name": "mtype",
+                    "type": "string"
+                },
+                {
+                    "name": "limit",
+                    "type": "uint16"
+                },
+                {
+                    "name": "minted",
+                    "type": "uint16"
+                },
+                {
+                    "name": "holders",
+                    "type": "name[]"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "nft_id",
+                    "type": "name"
+                },
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "index",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "name": "update",
+            "base": "",
+            "fields": [
+                {
+                    "name": "nft_id",
+                    "type": "name"
+                },
+                {
+                    "name": "nft_name",
+                    "type": "string"
+                },
+                {
+                    "name": "media",
+                    "type": "string"
+                },
+                {
+                    "name": "mtype",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "zzclearall",
+            "base": "",
+            "fields": [
+                {
+                    "name": "pass",
+                    "type": "name"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "create",
+            "type": "create",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "mint",
+            "type": "mint",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "update",
+            "type": "update",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "zzclearall",
+            "type": "zzclearall",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "nft.holders",
+            "type": "nft_holders",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "nft.listing",
+            "type": "nft_listing",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}
