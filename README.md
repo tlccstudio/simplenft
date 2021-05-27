@@ -1,27 +1,3 @@
-# Simple NFT
----
-Each NFT is registered to a unique owner inside of the nft.listing TABLE.
-
-The vector of "holders" signifies by name format which account name owns each NFT, using the
-array index as the signifier of ownership.
-
-The zero position of holders, for example, signifies the first minted owner of that NFT, #1 out of Max Issued.
-
-NFT's are first created, then minted, and then they are able to be transfered.
-
-A maximum of 100 NFT's may be minted at once.  Any given NFT is limited to 1,000 maximum issued.
-
-Contract actions are as follows:
-create - Create a new NFT, specifying all data, limit of 1,000 possible NFT's
-update - Update name/media data for existing NFT, but does not change ownership
-mint - Mints an NFT to owner specified, maximum of 100 mints at a time
-transfer - Transfers a single NFT to another owner.
-
-zzclearall - For testing and debugging, will attempt to wipe all data.
-Larger TABLE data may take too long to execute zzclearall, in which case modify so that it executes.
-This is just a debug / testing function, or a way to close out a contract that is no longer needed.
-Operational contracts should consider removing zzclearall entirely.
-
 ## Purpose of Simple NFT
 ----
 Other NFT standards may focus on CPU efficiency, but in doing so they require multiple API requests
@@ -36,6 +12,31 @@ up to 1,000 holders.
 
 Furthermore, lower_bound and upper_bound get_table_rows on the holders nft.holders table may provide
 the quantity of all NFT held by a single account, specifically the nft_id and the quantity they own.
+
+A single request to detail all NFT data.  A single request to get an account's full ownership data.
+
+## Specific Info NFT
+---
+
+Two TABLES 
+**nft.listing** -- Has all NFT data, including full listing of ownership with each minted NFT
+**nft.holders** -- For easy front-end access, uint128_t composite key of owner + nft_id, providing
+a total quantity of the nft_id that the account owns.  
+
+NFT's are first created, then minted, and then they are able to be transfered.
+
+A maximum of 100 NFT's may be minted at once.  Any given NFT is limited to 1,000 maximum issued.
+
+Contract actions are as follows:
+**create** - Create a new NFT, specifying all data, limit of 1,000 possible NFT's
+**update** - Update name/media data for existing NFT, but does not change ownership
+**mint** - Mints an NFT to owner specified, maximum of 100 mints at a time
+**transfer** - Transfers a single NFT to another owner.
+
+**zzclearall** - For testing and debugging, will attempt to wipe all data.
+Larger TABLE data may take too long to execute zzclearall, in which case modify so that it executes.
+This is just a debug / testing function, or a way to close out a contract that is no longer needed.
+Operational contracts should consider removing zzclearall entirely.
 
 
 ## CPU Usage
