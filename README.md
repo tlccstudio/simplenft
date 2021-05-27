@@ -20,6 +20,7 @@ A single request to detail all NFT data.  A single request to get an account's f
 
 Two TABLES 
 **nft.listing** -- Has all NFT data, including full listing of ownership with each minted NFT
+
 **nft.holders** -- For easy front-end access, uint128_t composite key of owner + nft_id, providing
 a total quantity of the nft_id that the account owns.  
 
@@ -29,8 +30,11 @@ A maximum of 100 NFT's may be minted at once.  Any given NFT is limited to 1,000
 
 Contract actions are as follows:
 **create** - Create a new NFT, specifying all data, limit of 1,000 possible NFT's
+
 **update** - Update name/media data for existing NFT, but does not change ownership
+
 **mint** - Mints an NFT to owner specified, maximum of 100 mints at a time
+
 **transfer** - Transfers a single NFT to another owner.
 
 **zzclearall** - For testing and debugging, will attempt to wipe all data.
