@@ -101,7 +101,7 @@ void simplenft::nftmint(name nft_id, name owner, uint16_t qty) {
     nft_index _nft( get_self(), get_self().value );
     holder_index _holders( get_self(), get_self().value );
     auto itr = _nft.find(nft_id.value);
-    auto itr2 = _holders.find(((uint128_t)nft_id.value << 64)|(uint128_t)owner.value);
+    auto itr2 = _holders.find(((uint128_t)owner.value << 64)|(uint128_t)nft_id.value);
 
     check(itr != _nft.end(), "nft_id does not exist, unable to mint. ");
 
@@ -155,7 +155,7 @@ void simplenft::nfttransfer(name nft_id, name from, name to, uint16_t index) {
   name owner = itr->holders[index];
 
   holder_index _holders( get_self(), get_self().value );
-  auto itr2 = _holders.find(((uint128_t)nft_id.value << 64)|(uint128_t)owner.value);
+  auto itr2 = _holders.find(((uint128_t)owner.value << 64)|(uint128_t)nft_id.value);
 
   if(itr2 == _holders.end())
   { check(false, "Contract error! nfttransfer - B"); return; }
@@ -177,7 +177,7 @@ void simplenft::nfttransfer(name nft_id, name from, name to, uint16_t index) {
     });
   }
 
-  auto itr3 = _holders.find(((uint128_t)nft_id.value << 64)|(uint128_t)to.value);
+  auto itr3 = _holders.find(((uint128_t)to.value << 64)|(uint128_t)nft_id.value);
   //increase qty for receiver or create
   if(itr3 == _holders.end()) { //create record
       _holders.emplace( get_self(), [&]( auto& holders_row ) {

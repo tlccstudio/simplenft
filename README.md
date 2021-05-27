@@ -31,6 +31,10 @@ just to verify who owns what token.
 
 *Simple NFT solves this issue on the front end, while keeping smart contract CPU under control.*
 
+A single get_table_rows request will return all data related to an NFT entry, including all holders up to 1,000 holders.
+
+
+
 ## CPU Usage
 ----
 The highest CPU usage I have observed so far, is transfering the zero index of a fully minted 1,000 issued

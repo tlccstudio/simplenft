@@ -37,8 +37,8 @@ CONTRACT simplenft : public contract {
       name              owner; 
       uint16_t          qty;    // qty held, if zero, just delete row
 
-      // composite id -- ((uint128_t)nft_id.value << 64)|(uint128_t)mint_id.value
-      auto primary_key() const { return ((uint128_t)nft_id.value << 64)|(uint128_t)owner.value; };
+      // composite id -- ((uint128_t)owner.value << 64)|(uint128_t)nft_id.value;
+      auto primary_key() const { return ((uint128_t)owner.value << 64)|(uint128_t)nft_id.value; };
     };
 
     typedef multi_index <name("nft.holders"), nft_holders> holder_index;
