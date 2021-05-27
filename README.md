@@ -31,8 +31,11 @@ just to verify who owns what token.
 
 *Simple NFT solves this issue on the front end, while keeping smart contract CPU under control.*
 
-A single get_table_rows request will return all data related to an NFT entry, including all holders up to 1,000 holders.
+A single get_table_rows request will return all data related to an NFT entry, including all holders
+up to 1,000 holders.
 
+Furthermore, lower_bound and upper_bound get_table_rows on the holders nft.holders table may provide
+the quantity of all NFT held by a single account, specifically the nft_id and the quantity they own.
 
 
 ## CPU Usage
