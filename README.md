@@ -1,7 +1,7 @@
 ## Purpose of Simple NFT
 ----
 Other NFT standards may focus on CPU efficiency, but in doing so they require multiple API requests
-in order to find how all the required information about an NFT.  This means that certain standards
+in order to find out all the required information about an NFT.  This means that certain standards
 have very slow website usability, because the API requests are being spammed in the background
 just to verify who owns what token.
 
