@@ -1,3 +1,5 @@
+** Code contains critical bug.  Primary key must be uint64_t **
+
 ## Purpose of Simple NFT
 ----
 Other NFT standards may focus on CPU efficiency, but in doing so they require multiple API requests
